@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 80%;
+    background-color: #ddd;
+    margin: 10px auto;
+    padding: 5px;
+}
+
+/* Start Nav Bar -----------------------------------*/
+.nav-bar {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+    display: inline-block;
+    margin: auto 0px;
+    padding: 0;
+}
+
+ul li {
+    display: inline-flex;
+    margin: 0px 3px;
+    background-color: #aaa;
+    color: #fff;
+    padding: 10px 10px;
+    line-height: 19px;
+}
+
+ul li.active {
+    background-color: #3498DB;
+    color: white;
+}
+
+ul li a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 0px 0px;
+    text-decoration: none;
+    font-size: 17px;
+}
+/* End Nav Bar -----------------------------------*/
+
+/* Start Menus Bar ---------------------------------*/
+/* Dropdown Button */
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 80px;
+    border-radius: 5px;
+  }
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 3px 5px 8px 1px rgb(0 0 0 / 16%);
+    z-index: 1;
+    transition: all 0.3s;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a span {
+      font-size: 0.9em;
+      color: #666;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+      background-color: #ddd
+    }
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {
+      display:block;
+    }
+/* End Menus Bar  ---------------------------------------- */
+
+/* Start Status Bar */
+/* End Status Bar */
+
+/* Start Working Area */
+canvas {
+    border: 1px solid black;
+    width: 560px;
+    height: 360px;
+  }
+/* End Working Area */
