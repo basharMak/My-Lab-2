@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Lab 2</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -43,11 +43,37 @@
     <!-- End Status Bar -->
 
     <!-- Start Working Area -->
-    <h1>Drawing with mouse events</h1>
-    <canvas id="myPics" width="560" height="360"></canvas>
+    <div class="canvas-container">
+        <div>
+            <span class="title">Working Area</span>
+            <span class="cords">22/566</span>
+        </div>
+        <canvas id="myPics" width="560" height="360"></canvas>
+    </div>
     <!-- End Working Area -->
 
     <!-- Start Option Panel -->
+    <div class="panels-container">
+        <div class="panels-toggle">
+            <!-- &lt; -->
+            *
+        </div>
+        <div class="panels-setting">
+            <div class="brush-panel">
+                <form action="">
+                    <label for="brush-size">Brush Size:</label>
+                    <input type="number" value="1" class="brush-size" id="brush-size">
+                </form>
+                <form action="">
+                    <label for="brush-color">Brush Color:</label>
+                    <input type="color" value="" class="brush-color" id="brush-color">
+                </form>
+                <div class="brush-show-container">
+                    <span class="brush-show"></span>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- End Option Panel -->
 
     <!-- Start Images Gallery -->
