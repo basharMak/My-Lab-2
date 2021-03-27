@@ -1,5 +1,17 @@
 
+// Start Side nav bar:
+let sideNavBarLi = document.querySelectorAll("#side-ul li")
 
+
+sideNavBarLi.forEach(liElem => {
+  liElem.addEventListener('click', (e) => {
+  
+      e.target.classList.add("active")
+
+  })
+})
+
+// End Side nav bar:
 
 // Start Menus Bar: --------------------------------
 /* When the user clicks on the button,
@@ -22,7 +34,31 @@ function myFunction() {
     }
   }
 
-  // End Menus Bar: --------------------------------
+// Start Status Bar
+
+document.body.addEventListener("mousemove", function(event) {
+
+  let coordX = document.getElementById("coords-x")
+  let coordY = document.getElementById("coords-y")
+  let colorViewer = document.getElementById("color")
+  let widthStatus = document.getElementById("width-status")
+  let heightStatus = document.getElementById("height-status")
+  
+  var positionX = event.clientX;
+  coordX.innerHTML = positionX;
+
+  var positionY = event.clientY;
+  coordY.innerHTML = positionY;
+
+  colorViewer.style.backgroundColor = brushColor.value
+
+  widthStatus.innerHTML = canvasWidth.value
+  heightStatus.innerHTML = canvasHeight.value
+});
+// End Status Bar
+
+
+// End Menus Bar: --------------------------------
 
 
 
@@ -35,19 +71,19 @@ let isDrawing = false;
 let x = 0;
 let y = 0;
 
-const myPics = document.getElementById('myPics');
-const context = myPics.getContext('2d');
+const myCanvas = document.getElementById('myCanvas');
+const context = myCanvas.getContext('2d');
 
 // event.offsetX, event.offsetY gives the (x,y) offset from the edge of the canvas.
 
 // Add the event listeners for mousedown, mousemove, and mouseup
-myPics.addEventListener('mousedown', e => {
+myCanvas.addEventListener('mousedown', e => {
   x = e.offsetX;
   y = e.offsetY;
   isDrawing = true;
 });
 
-myPics.addEventListener('mousemove', e => {
+myCanvas.addEventListener('mousemove', e => {
   if (isDrawing === true) {
     drawLine(context, x, y, e.offsetX, e.offsetY);
     x = e.offsetX;
@@ -73,6 +109,13 @@ function drawLine(context, x1, y1, x2, y2) {
   context.stroke();
   context.closePath();
 }
+
+function canvasDims() {
+  myCanvas.style.width = canvasWidth.value + "px"
+  myCanvas.style.height = canvasHeight.value + "px" 
+}
+
+
 // End Working Area ------------------------------
 
 
@@ -84,6 +127,10 @@ let brushColor = document.getElementById("brush-color")
 let brushViewerContainer = document.getElementById("brush-viewer-container")
 let brushViewer = document.getElementById("brush-viewer")
 
+let canvasWidth = document.getElementById("canvas-width")
+let canvasHeight = document.getElementById("canvas-height")
+
+// Brush size and color setup
 panelsToggle.onclick = function () {
         panelsContainer.classList.toggle("open");
         brushViewerContainer.classList.toggle("show")
@@ -94,6 +141,5 @@ function brushSetting() {
   brushViewer.style.height = brushSize.value + "px";
   brushViewer.style.backgroundColor = brushColor.value;
 }
-
 
 // End panels toggle

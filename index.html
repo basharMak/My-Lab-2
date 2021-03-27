@@ -10,16 +10,14 @@
 <body>
     
      <!-- Start Nav Bar -->
-    <div class="nav-bar">
-        <div class="container">
-            <ul>
-                <li class="active"><a href="">Home</a></li>
-                <li><a href="">Drawing Area</a></li>
-                <li><a href="">JavaScript Tut</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Contacts</a></li>
-            </ul>
-        </div>
+    <div class="side-nav-bar">
+        <ul id="side-ul">
+            <li>Home</li>
+            <li>Drawing</li>
+            <li>JS Tutorial</li>
+            <li>About Us</li>
+            <li>Contacts</li>
+        </ul>
     </div>
     <!-- End Nav Bar -->
 
@@ -35,6 +33,21 @@
                   <a href="#">Exit<span>   -- "ctrl + E"</span></a>
                 </div>
               </div>
+
+              <div class="status-bar">
+                  <div class="title">Width:</div>
+                  <div class="width-status" id="width-status"></div>
+                  <div class="title">Height:</div>
+                  <div class="height-status" id="height-status"></div>
+
+                  <div class="title">Color:</div>
+                  <div class="color" id="color"></div>
+
+                  <div class="title">CoordsX:</div>
+                  <div class="coords-x" id="coords-x"></div>
+                  <div class="title">CoordsY:</div>
+                  <div class="coords-y" id="coords-y"></div>
+              </div>
         </div>
     </div>
     <!-- End Menus Bar -->
@@ -48,7 +61,7 @@
             <h3 class="title">Working Area</h3>
             <h3 class="cords">22/566</h3>
         </div>
-        <canvas id="myPics" width="560" height="360"></canvas>
+        <canvas id="myCanvas" width="560" height="360"></canvas>
     </div>
     <!-- End Working Area -->
 
@@ -56,33 +69,36 @@
     <div class="panels-container" id="panels-container">
         <div class="panels-toggle" id="panels-toggle">*</div>
         <div class="panels-setting" id="panels-setting">
+            
             <div class="canvas-panel">
                 Canvas dimensions:
                 <form action="">
                     <label for="canvas-width">Width:</label>
-                    <input type="number" value="1" class="canvas-width" id="canvas-width">
+                    <input type="number" value="560" class="canvas-width" id="canvas-width">
                 </form>
                 <form action="">
                     <label for="canvas-height">Height:</label>
-                    <input type="number" value="1" class="canvas-height" id="canvas-height">
+                    <input type="number" value="360" class="canvas-height" id="canvas-height">
                 </form>
+                <button class="canvasBtn" id="canvasBtn" onclick="canvasDims()">Accept</button>
             </div>
+           
             <div class="brush-panel">
                 Brush size:
                 <form action="">
                     <label for="brush-size">Size:</label>
                     <input type="number" value="10" min="1" max="100" class="brush-size" id="brush-size">
-                    <input type="button" value="Ok" onclick="brushSetting()" class="btn">
                 </form>
                 <form action="">
                     <label for="brush-color">Color:</label>
-                    <input type="button" value="Ok" onclick="brushSetting()" class="btn">
                     <input type="color" value="#000000" class="brush-color" id="brush-color">
                 </form>
+                <button class="canvasBtn" id="canvasBtn" onclick="brushSetting()">Accept</button>
                 <div class="brush-viewer-container" id="brush-viewer-container">
                     <div class="brush-viewer" id="brush-viewer"></div>
                 </div>
             </div>
+        
         </div>
     </div>
     <!-- End Option Panel -->

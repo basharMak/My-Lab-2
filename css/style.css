@@ -17,25 +17,42 @@ body {
 }
 
 /* Start Nav Bar -----------------------------------*/
-.nav-bar {
-    margin: 0;
-    padding: 0;
+.side-nav-bar {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  left: 0;
+  top: 120px;
+  width: 50px;
+  min-height: 50vh;
 }
 ul {
     list-style: none;
-    display: inline-block;
-    margin: auto 0px;
+    display:block;
+    margin: 0;
     padding: 0;
 }
 
 ul li {
-    display: inline-flex;
-    margin: 0px 3px;
-    background-color: #aaa;
-    color: #fff;
-    padding: 10px 10px;
-    line-height: 19px;
-    border-radius: 5px;
+  display: block;
+  margin: 10px 0px;
+  background-color: #ccc;
+  color: #fff;
+  line-height: 19px;
+  border-radius: 0 10px 10px 0;
+  width: 90px;
+  padding: 5px 10px;
+  text-align: center;
+  transition: 0.3s;
+  height: 20px;
+  cursor: pointer;
+}
+
+ul li:hover {
+  width: 100px;
+  transform: translateX(5%);
+  background-color: #aaa;
+  color: white;
 }
 
 ul li.active {
@@ -110,6 +127,41 @@ ul li a {
   .show {
       display:block;
     }
+
+ .status-bar {
+    display: inline-flex;
+    width: 85%;
+    height: 40px;
+    float: right;
+    margin: 2px 0px;
+ }
+
+ .status-bar .title {
+  width: 9%;
+  height: 30px;
+  color: #666;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 4px 0;
+  padding: 0;
+  font-size: 13px;
+ }
+
+ .status-bar .width-status,
+ .status-bar .height-status,
+ .status-bar .coords-x,
+ .status-bar .coords-y,
+ .status-bar .color {
+  width: 9%;
+  height: 23px;
+  background-color: #fff;
+  display: inline-block;
+  margin: 8px 5px;
+  text-align: center;
+  line-height: 23px;
+ }
+  
 /* End Menus Bar  ---------------------------------------- */
 
 /* Start Status Bar */
@@ -237,7 +289,7 @@ canvas {
   width: 40%;
   display: inline;
   float: right;
-  margin: 0;
+  margin: -4px 1px;
   
 }
 
@@ -262,7 +314,7 @@ canvas {
 .panels-container .panels-setting .brush-panel .brush-viewer {
   width: 10px;
   height: 10px;
-  background-color: red;
+  /* background-color: red; */
   border-radius: 50%;
   position: absolute;
   left: 60px;
@@ -271,16 +323,18 @@ canvas {
 }
 
 
-.btn {
+
+.canvasBtn {
   background-color: var(--main-color);
   color: white;
-  padding: 5px;
-  font-size: 13px;
+  font-size: 15px;
   border: none;
   cursor: pointer;
-  width: 40px;
+  width: 100px;
+  height: 30px;
   border-radius: 4px;
-  margin-left: 0px;
+  margin: 10px 25%;
+  margin-bottom: 0;
 }
 
 
