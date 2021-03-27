@@ -66,11 +66,34 @@ window.addEventListener('mouseup', e => {
 
 function drawLine(context, x1, y1, x2, y2) {
   context.beginPath();
-  context.strokeStyle = 'black';
-  context.lineWidth = 1;
+  context.strokeStyle = brushColor.value;
+  context.lineWidth = brushSize.value;
   context.moveTo(x1, y1);
   context.lineTo(x2, y2);
   context.stroke();
   context.closePath();
 }
 // End Working Area ------------------------------
+
+
+// Start panels toggle
+let panelsToggle = document.getElementById("panels-toggle");
+let panelsContainer = document.getElementById("panels-container");
+let brushSize = document.getElementById("brush-size")
+let brushColor = document.getElementById("brush-color")
+let brushViewerContainer = document.getElementById("brush-viewer-container")
+let brushViewer = document.getElementById("brush-viewer")
+
+panelsToggle.onclick = function () {
+        panelsContainer.classList.toggle("open");
+        brushViewerContainer.classList.toggle("show")
+}
+
+function brushSetting() {
+  brushViewer.style.width = brushSize.value + "px";
+  brushViewer.style.height = brushSize.value + "px";
+  brushViewer.style.backgroundColor = brushColor.value;
+}
+
+
+// End panels toggle

@@ -45,31 +45,42 @@
     <!-- Start Working Area -->
     <div class="canvas-container">
         <div>
-            <span class="title">Working Area</span>
-            <span class="cords">22/566</span>
+            <h3 class="title">Working Area</h3>
+            <h3 class="cords">22/566</h3>
         </div>
         <canvas id="myPics" width="560" height="360"></canvas>
     </div>
     <!-- End Working Area -->
 
     <!-- Start Option Panel -->
-    <div class="panels-container">
-        <div class="panels-toggle">
-            <!-- &lt; -->
-            *
-        </div>
-        <div class="panels-setting">
+    <div class="panels-container" id="panels-container">
+        <div class="panels-toggle" id="panels-toggle">*</div>
+        <div class="panels-setting" id="panels-setting">
+            <div class="canvas-panel">
+                Canvas dimensions:
+                <form action="">
+                    <label for="canvas-width">Width:</label>
+                    <input type="number" value="1" class="canvas-width" id="canvas-width">
+                </form>
+                <form action="">
+                    <label for="canvas-height">Height:</label>
+                    <input type="number" value="1" class="canvas-height" id="canvas-height">
+                </form>
+            </div>
             <div class="brush-panel">
+                Brush size:
                 <form action="">
-                    <label for="brush-size">Brush Size:</label>
-                    <input type="number" value="1" class="brush-size" id="brush-size">
+                    <label for="brush-size">Size:</label>
+                    <input type="number" value="10" min="1" max="100" class="brush-size" id="brush-size">
+                    <input type="button" value="Ok" onclick="brushSetting()" class="btn">
                 </form>
                 <form action="">
-                    <label for="brush-color">Brush Color:</label>
-                    <input type="color" value="" class="brush-color" id="brush-color">
+                    <label for="brush-color">Color:</label>
+                    <input type="button" value="Ok" onclick="brushSetting()" class="btn">
+                    <input type="color" value="#000000" class="brush-color" id="brush-color">
                 </form>
-                <div class="brush-show-container">
-                    <span class="brush-show"></span>
+                <div class="brush-viewer-container" id="brush-viewer-container">
+                    <div class="brush-viewer" id="brush-viewer"></div>
                 </div>
             </div>
         </div>
