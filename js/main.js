@@ -1,17 +1,104 @@
 
-// Start Side nav bar:
-let sideNavBarLi = document.querySelectorAll("#side-ul li")
+// Start Side nav bar -----------------------------:
 
+let sideNavLinks = document.querySelectorAll("#side-ul li a")
 
-sideNavBarLi.forEach(liElem => {
-  liElem.addEventListener('click', (e) => {
-  
-      e.target.classList.add("active")
+let home = document.getElementById("home")
+let drawing = document.getElementById("drawing")
+let jsRef = document.getElementById("js-ref")
+let about = document.getElementById("about")
+let contacts = document.getElementById("contacts")
 
+// this code is very important to add and remove active class <======<<
+sideNavLinks.forEach( ele => {
+  ele.addEventListener('click', (e) => {
+    removeActive()
+    e.preventDefault()
+    e.target.classList.add("active")
   })
 })
 
-// End Side nav bar:
+function removeActive() {
+  sideNavLinks.forEach( ele => {
+    ele.classList.remove("active");
+  });
+}
+//----------------- >>======>
+
+home.onclick = function() {
+  let homePage = document.createElement("div")
+  homePage.className = "home-page";
+
+  let homeMessage = document.createElement("div")
+      homeMessage.className = "home-message";
+      homeMessage.innerHTML = `<h1 style ="font-size: 50px; margin-top:65px; margin-bottom:10px;">Drawing Canvas</h1>
+                              <p style = "font-size: 20px;">
+                              This project like<br>
+                              <span style ="font-weight:bold"><i>Udacity lab-2 pixel art</i></span><br>
+                              but with different concept and more complex<br>
+                              done "by Bashar Maklad" within tow days.
+                              </p>
+                              `
+      homePage.appendChild(homeMessage)
+      document.body.appendChild(homePage);
+
+      drawing.onclick = function() {
+        homeMessage.style.transition = "1.3s"
+        homeMessage.style.transform = "translate(30%, -500%)"
+        homeMessage.style.height = "10px"
+
+        homePage.style.transition = "2s"
+        homePage.style.transform = "translate(0, 150%)"
+      }
+}
+
+
+window.onload = function() {
+  
+  let overlay = document.createElement("div")
+      
+      overlay.className = "overlay";
+    
+  let splashScn = document.createElement("div")
+      splashScn.className = "splash-scn";
+      splashScn.innerHTML = `<h1 style="font-size: 50px; margin-top:100px; margin-bottom:10px;">Welcome</h1>
+                             <h2 style="font-size: 24px; margin-top:0; font-weight:100;">Drawing Canvas by: Bashar Maklad</h2>`
+      overlay.appendChild(splashScn)
+      document.body.appendChild(overlay);
+
+
+      drawing.onclick = function() {
+        splashScn.style.transition = "1.3s"
+        splashScn.style.transform = "translate(30%, -500%)"
+        splashScn.style.height = "10px"
+
+        overlay.style.transition = "2s"
+        overlay.style.transform = "translate(0, 150%)"
+        // overlay.remove()
+      }
+
+
+}
+
+
+jsRef.onclick = function() {
+  //window.open("https://www.w3schools.com/jsref", "_blank");
+  window.open("https://developer.mozilla.org/en-US/docs/Web/JavaScript", "_blank");
+}
+
+about.onclick = function() {
+  window.open("https://artdesign-bkup.blogspot.com/p/blog-page.html", "_blank");
+}
+
+contacts.onclick = function() {
+  window.open("https://artdesign-bkup.blogspot.com/p/blog-page_18.html", "_blank");
+}
+
+
+
+
+
+// End Side nav bar--------------------------------:
 
 // Start Menus Bar: --------------------------------
 /* When the user clicks on the button,

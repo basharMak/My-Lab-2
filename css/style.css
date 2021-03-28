@@ -17,56 +17,88 @@ body {
 }
 
 /* Start Nav Bar -----------------------------------*/
-.side-nav-bar {
+ul {
+  position: fixed;
   margin: 0;
   padding: 0;
-  position: fixed;
-  left: 0;
   top: 120px;
-  width: 50px;
-  min-height: 50vh;
-}
-ul {
-    list-style: none;
-    display:block;
-    margin: 0;
-    padding: 0;
+  left: 0;
+  z-index: 1001;
 }
 
 ul li {
-  display: block;
-  margin: 10px 0px;
-  background-color: #ccc;
-  color: #fff;
-  line-height: 19px;
-  border-radius: 0 10px 10px 0;
-  width: 90px;
-  padding: 5px 10px;
-  text-align: center;
+  list-style: none;
   transition: 0.3s;
-  height: 20px;
-  cursor: pointer;
 }
 
-ul li:hover {
-  width: 100px;
+ul li a {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  margin: 5px 0;
+  background-color: #ccc;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+  border-radius: 0 5px 5px 0;
+}
+
+ul li:hover a {
   transform: translateX(5%);
   background-color: #aaa;
   color: white;
 }
 
-ul li.active {
-    background-color: var(--main-color);
-    color: white;
+ul li a.active {
+  background-color: var(--main-color);
+  color: white;
 }
 
-ul li a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 0px 0px;
-    text-decoration: none;
-    font-size: 17px;
+
+.overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, .7);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.splash-scn {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(50%, 50%);
+  background-color: var(--main-color);
+  color: #fff;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+}
+
+.home-page {
+  position: fixed;
+  background-color: rgba(0, 150, 255, .9);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.home-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(50%, 50%);
+  background-color: #ccc;
+  color: var(--main-color);
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  border: 1px solid #fff;
 }
 /* End Nav Bar -----------------------------------*/
 
@@ -201,6 +233,9 @@ canvas {
     width: 560px;
     height: 360px;
   }
+canvas:hover {
+  cursor: crosshair;
+}
 /* End Working Area ------------------------------------- */
 
 /* Start Option Panel ------------------------------------*/
@@ -314,7 +349,7 @@ canvas {
 .panels-container .panels-setting .brush-panel .brush-viewer {
   width: 10px;
   height: 10px;
-  /* background-color: red; */
+  background-color: #000;
   border-radius: 50%;
   position: absolute;
   left: 60px;
@@ -364,3 +399,26 @@ canvas {
 
 }
 /* End Option Panel ------------------------------*/
+
+/* Start footer */
+.footer {
+  width: 80%;
+  color: #666;
+  background-color: #ddd;
+  /* margin: 10px auto; */
+  padding: 5px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.footer h4 {
+  margin:0;
+}
+
+.footer p {
+  margin:0;
+}
+/* End footer */
